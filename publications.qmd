@@ -1,0 +1,7 @@
+---
+title: "Publications"
+---
+
+{{< include _navigation.qmd >}}
+
+**Placeholder:** Add your updated publication list, with full citations and links where appropriate.

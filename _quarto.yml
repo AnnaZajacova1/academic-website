@@ -1,0 +1,21 @@
+project:
+  type: website
+  output-dir: _site
+  render:
+    - index.qmd
+    - research.qmd
+    - publications.qmd
+    - teaching.qmd
+
+website:
+  title: "Anna Zajacova"
+  search: false
+
+format:
+  html:
+    theme: none
+    minimal: true
+    css: styles.css
+    toc: false
+    anchor-sections: false
+    lang: en
