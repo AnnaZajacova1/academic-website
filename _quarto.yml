@@ -9,6 +9,7 @@ project:
 
 website:
   title: "Anna Zajacova"
+  site-url: "https://annazajacova1.github.io/academic-website/"
   search: false
 
 format:
