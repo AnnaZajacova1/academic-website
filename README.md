@@ -1,7 +1,8 @@
 # Anna Zajacova's academic website
 
 A simple Quarto website with four pages. Substantive content is clearly marked
-as a placeholder. No hosting or deployment is configured.
+as a placeholder. GitHub Actions builds and deploys the site to GitHub Pages
+after changes are merged into `main`.
 
 ## Files
 
@@ -15,6 +16,7 @@ as a placeholder. No hosting or deployment is configured.
 | `_navigation.qmd` | Shared Markdown navigation included in each page. |
 | `styles.css` | Minimal typography, spacing, and link styling. |
 | `.gitignore` | Excludes generated output and local state from Git. |
+| `.github/workflows/publish.yml` | Builds Quarto and deploys `_site/` to GitHub Pages on pushes to `main`. |
 | `README.md` | These instructions. |
 
 ## How Quarto works
@@ -72,8 +74,9 @@ Neither command publishes the site.
 
 Git records versions of your source files; GitHub stores the repository online.
 After reviewing changes, make a Git commit to save a version. Generated files in
-`_site/` stay ignored. GitHub Pages can be configured separately later; this
-project adds no publishing workflow, hosting configuration, or DNS changes.
+`_site/` stay ignored. The GitHub Pages workflow publishes `main`; a pull request
+does not publish until you merge it. Generated HTML is uploaded as a workflow artifact rather
+than committed to Git.
 
 ## Review before accepting
 
@@ -122,4 +125,44 @@ not included in this repository.
 
 The existing website's text structure was inspected as a reference; its visual
 appearance was not verified in a browser. No outdated substantive content was
-reused. No GitHub Pages settings or WordPress content were changed.
+reused. WordPress, Hostinger, DNS, and custom-domain settings are not changed
+by this workflow.
+
+## Enable the GitHub Pages preview
+
+The preview address will be:
+https://annazajacova1.github.io/academic-website/
+
+1. On GitHub, open **AnnaZajacova1/academic-website → Settings → Pages**.
+2. Under **Build and deployment**, select **GitHub Actions** as the **Source**.
+   Do not add a custom domain. If a starter-workflow suggestion appears, you
+   can ignore it: this repository already contains the workflow.
+3. Review and merge the GitHub Pages setup pull request. Merging into `main`
+   starts the build automatically.
+4. Open the repository's **Actions** tab and select **Build and deploy Quarto
+   to GitHub Pages**. Wait for both `build` and `deploy` to show green checks.
+5. Open the preview address above (or **Settings → Pages → Visit site**).
+   The first deployment may take a few minutes to appear.
+
+If you merge before choosing the Pages source and the workflow fails, choose
+**GitHub Actions** as described above, then open **Actions → Build and deploy
+Quarto to GitHub Pages → Run workflow**, select `main`, and click **Run workflow**.
+If repository Actions are disabled, enable them in **Settings → Actions → General**.
+If your account or organization does not offer Pages for this repository's
+visibility, GitHub will explain that under **Settings → Pages**; do not change
+repository visibility without considering what source content would become public.
+
+The Pages website is a publicly accessible preview. It does not replace
+annazajacova.com. Leave **Custom domain** empty and do not change DNS or Hostinger.
+No `CNAME` file is included. Navigation and CSS use relative URLs so they work
+under `/academic-website/`. Future merges into `main` automatically update the
+preview. No personal access token or publishing branch is needed.
+
+The workflow pins Quarto to the version used for the local build check.
+GitHub's actual build and deployment can be verified after you enable Pages
+and merge the pull request; they cannot run from this unmerged setup branch.
+
+The Pages setup was also tested locally under the `/academic-website/` path.
+All four pages and their CSS returned HTTP 200, and all 16 navigation
+combinations worked in Chromium. The local render completed without errors or
+warnings. Workflow YAML and deployment permissions were checked.
