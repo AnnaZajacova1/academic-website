@@ -1,3 +1,6 @@
-::: {role="navigation" aria-label="Main navigation"}
-[Home](index.qmd) · [Research](research.qmd) · [Publications](publications.qmd) · [Teaching](teaching.qmd)
+::: {.site-nav role="navigation" aria-label="Main navigation"}
+[About](index.qmd#about)
+[Research](research.qmd)
+[Publications](publications.qmd)
+[Teaching](teaching.qmd)
 :::

@@ -1,6 +1,9 @@
 project:
   type: website
   output-dir: _site
+  resources:
+    - assets/fonts/Allura-Regular.ttf
+    - assets/fonts/OFL-Allura.txt
   render:
     - index.qmd
     - research.qmd
