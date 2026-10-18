@@ -1,0 +1,10 @@
+# Quarto generated output and local state
+/_site/
+/.quarto/
+/_freeze/
+
+# Operating-system files
+.DS_Store
+Thumbs.db
+
+**/*.quarto_ipynb

@@ -1,0 +1,9 @@
+---
+title: "Research"
+---
+
+{{< include _navigation.qmd >}}
+
+**Placeholder:** Describe your current research interests and questions.
+
+**Placeholder:** Add selected projects and relevant links.

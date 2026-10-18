@@ -1,0 +1,3 @@
+::: {role="navigation" aria-label="Main navigation"}
+[Home](index.qmd) · [Research](research.qmd) · [Publications](publications.qmd) · [Teaching](teaching.qmd)
+:::

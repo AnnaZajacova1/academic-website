@@ -1,0 +1,15 @@
+---
+title: "Anna Zajacova"
+---
+
+{{< include _navigation.qmd >}}
+
+## Home
+
+**Placeholder:** Add a brief introduction and current academic affiliation.
+
+**Placeholder:** Add contact information you would like to make public.
+
+[CV (PDF, forthcoming)](cv.pdf)
+
+The CV PDF has not been added yet.

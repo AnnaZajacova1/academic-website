@@ -1,0 +1,29 @@
+/* System fonts and a narrow reading column; no external assets. */
+body {
+  max-width: 48rem;
+  margin: 3rem auto;
+  padding: 0 1.25rem;
+  background: #fff;
+  color: #292929;
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 1.125rem;
+  line-height: 1.65;
+}
+
+h1, h2 {
+  font-weight: normal;
+  line-height: 1.25;
+}
+
+a {
+  color: #31556b;
+  text-underline-offset: 0.15em;
+}
+
+[role="navigation"] {
+  margin-bottom: 2rem;
+  padding-bottom: 1rem;
+  border-bottom: 1px solid #ddd;
+  font-family: system-ui, sans-serif;
+  font-size: 1rem;
+}

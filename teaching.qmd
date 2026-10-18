@@ -1,0 +1,9 @@
+---
+title: "Teaching"
+---
+
+{{< include _navigation.qmd >}}
+
+**Placeholder:** Add a brief description of your teaching interests or approach.
+
+**Placeholder:** Add current or selected courses, with accurate titles and dates.
