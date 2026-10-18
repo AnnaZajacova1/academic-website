@@ -1,29 +1,134 @@
-/* System fonts and a narrow reading column; no external assets. */
+/* A local, openly licensed script font; no external font requests. */
+@font-face {
+  font-family: "Allura";
+  src: url("assets/fonts/Allura-Regular.ttf") format("truetype");
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+}
+
+:root {
+  --background: #d6d6d6;
+  --red: #b50028;
+  --ink: #292727;
+}
+
+* { box-sizing: border-box; }
+
 body {
-  max-width: 48rem;
+  max-width: 52rem;
   margin: 3rem auto;
-  padding: 0 1.25rem;
-  background: #fff;
-  color: #292929;
+  padding: 0 1.5rem;
+  background: var(--background);
+  color: var(--ink);
   font-family: Georgia, "Times New Roman", serif;
   font-size: 1.125rem;
   line-height: 1.65;
 }
 
-h1, h2 {
-  font-weight: normal;
-  line-height: 1.25;
-}
+h1, h2, h3 { font-weight: normal; line-height: 1.2; }
+a { color: #87001e; text-underline-offset: 0.25em; }
+a:hover { text-decoration-thickness: 2px; }
+a:focus-visible { outline: 2px solid currentColor; outline-offset: 6px; }
 
-a {
-  color: #31556b;
-  text-underline-offset: 0.15em;
-}
-
-[role="navigation"] {
+.site-nav {
+  padding-bottom: 1.25rem;
   margin-bottom: 2rem;
-  padding-bottom: 1rem;
-  border-bottom: 1px solid #ddd;
+  border-bottom: 1px solid #aaa;
   font-family: system-ui, sans-serif;
   font-size: 1rem;
+}
+.site-nav p { display: flex; flex-wrap: wrap; gap: 0.75rem 1.5rem; margin: 0; }
+
+/* The other pages retain their comfortable reading column. */
+body:has(.homepage) { max-width: 82rem; margin: 0 auto; }
+body:has(.homepage) > #title-block-header { display: none; }
+
+.home-hero {
+  display: grid;
+  grid-template-columns: minmax(0, 1.2fr) minmax(0, 1fr);
+  align-items: center;
+  gap: clamp(1.5rem, 3vw, 3rem);
+  min-height: 100svh;
+  padding: 3.5rem 0;
+}
+
+.intro-panel {
+  padding: clamp(2rem, 4vw, 4rem) clamp(1.5rem, 3vw, 3rem);
+  border-radius: 2.5rem 2.5rem 0 2.5rem;
+  background: var(--red);
+  color: #fff9f3;
+  text-align: center;
+}
+
+.signature {
+  margin: 0 0 1.5rem;
+  font-family: "Allura", "Segoe Script", cursive;
+  font-size: clamp(2.75rem, 4.5vw, 4rem);
+  font-weight: 400;
+  line-height: 1.15;
+}
+
+.intro-placeholder {
+  max-width: 28rem;
+  margin: 0 auto;
+  font-family: system-ui, sans-serif;
+  font-size: 1rem;
+  line-height: 1.65;
+}
+.intro-placeholder p { margin: 0; }
+.intro-panel a { color: inherit; }
+.cv-link {
+  display: inline-block;
+  margin: 2.25rem 0 2.75rem;
+  font-family: system-ui, sans-serif;
+  font-size: 0.9rem;
+  letter-spacing: 0.08em;
+}
+.intro-panel .site-nav { margin: 0; padding: 0; border: 0; }
+.intro-panel .site-nav p { justify-content: center; gap: 1rem 1.5rem; }
+.intro-panel .site-nav a {
+  display: inline-flex;
+  align-items: center;
+  min-height: 44px;
+  text-decoration: none;
+}
+.intro-panel .site-nav a:hover { text-decoration: underline; }
+
+/* Display the original photograph intact, without filters or cropping. */
+.portrait { align-self: center; }
+.portrait p, .portrait figure { margin: 0; }
+.portrait img { display: block; width: 100%; height: auto; }
+
+.about-section {
+  max-width: 44rem;
+  margin: 0 auto;
+  padding: 3rem 0 5rem;
+  border-top: 1px solid #aaa;
+}
+.about-section h2 { margin-top: 0; }
+.about-section :target { scroll-margin-top: 2rem; }
+.cv-note { margin-top: 2.5rem; font-size: 1rem; }
+.cv-note h3 { margin-bottom: 0.5rem; }
+.cv-note p { margin-top: 0; }
+
+@media (max-width: 50rem) {
+  .home-hero {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 2rem;
+    min-height: auto;
+    padding: 2rem 0;
+  }
+  .intro-panel { padding: 2.75rem 1.5rem; border-radius: 2rem 2rem 0 2rem; }
+  .signature { font-size: clamp(2.75rem, 8vw, 4rem); }
+  .cv-link { margin: 1.5rem 0; }
+  .intro-panel .site-nav p { display: grid; grid-template-columns: repeat(2, auto); gap: 0.5rem 2rem; }
+  .portrait { width: min(100%, 27rem); margin: 0 auto; }
+  .about-section { padding: 2.5rem 0 3.5rem; }
+}
+
+@media (max-width: 23rem) {
+  body { padding: 0 1rem; }
+  .intro-panel { padding-inline: 1rem; }
+  .intro-panel .site-nav p { gap: 0.75rem 1rem; }
 }

@@ -1,15 +1,39 @@
 ---
 title: "Anna Zajacova"
+title-block-banner: false
+pagetitle: "Anna Zajacova"
 ---
 
-{{< include _navigation.qmd >}}
+::: {.homepage role="main"}
+::: {.home-hero}
+::: {.intro-panel}
+# Dr. Anna Zajacova {.signature}
 
-## Home
+::: {.intro-placeholder}
+**Placeholder:** Add your academic affiliation and a short description of your work.
+:::
+
+[CV](#cv){.cv-link aria-label="Curriculum vitae availability"}
+
+{{< include _navigation.qmd >}}
+:::
+
+::: {.portrait}
+![](<AZ Photo 1.jpg>){width=4128 height=6192 alt="Portrait of Anna Zajacova"}
+:::
+:::
+
+::: {.about-section}
+## About {#about}
 
 **Placeholder:** Add a brief introduction and current academic affiliation.
 
 **Placeholder:** Add contact information you would like to make public.
 
-[CV (PDF, forthcoming)](cv.pdf)
+::: {.cv-note}
+### Curriculum vitae {#cv}
 
-The CV PDF has not been added yet.
+CV PDF forthcoming.
+:::
+:::
+:::
